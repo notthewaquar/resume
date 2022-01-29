@@ -1033,9 +1033,11 @@ info bar
 }
 .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:after {
   position: relative;
-  content: 'I am available for freelance hire';
+  content: '  ';
+  /* I am available for freelance hire */
   width: 115px;
-  display: block;
+  /* display: block; */
+  display: none;
   padding: 5px 10px;
   top: -10px;
   left: 28px;
