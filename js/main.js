@@ -157,90 +157,135 @@ $(function() {
 
   bar.animate(0.7);
 
-  var bar = new ProgressBar.Line(lineprog1, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 2800,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
+  progressBar();
+  function progressBar() {
+    const progressBarEl = $('.art-line-progress').length
+    for (let i = 0; i < progressBarEl; i++) {
+      const pBarId = $(`.art-hard-skills > div:nth-child(${i+1}) .art-line-progress>div`).attr('id')
+      const pBarPercent = $(`.art-hard-skills > div:nth-child(${i+1}) .art-line-progress>div`).attr('data-percent')
+      // console.log({pBarId,pBarPercent});
+      // return
+      // break
+
+      var bar = new ProgressBar.Line(`#${pBarId}`, {
+        strokeWidth: 1.72,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 2800 + i*100,
+        trailWidth: 1.72,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        step: (state, bar) => {
+          bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+      });
+      bar.animate(+pBarPercent/100);
     }
-  });
+  }
 
-  bar.animate(.9);
+  // var bar = new ProgressBar.Line(lineprog1, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 2800,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
 
-  var bar = new ProgressBar.Line(lineprog2, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 2900,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
-  });
+  // bar.animate(.9);
 
-  bar.animate(.95);
+  // var bar = new ProgressBar.Line(lineprog2, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 2900,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
 
-  var bar = new ProgressBar.Line(lineprog3, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 3000,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
-  });
+  // bar.animate(.95);
 
-  bar.animate(.75);
+  // var bar = new ProgressBar.Line(lineprog3, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 3000,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
 
-  var bar = new ProgressBar.Line(lineprog4, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 3100,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
-  });
+  // bar.animate(.75);
 
-  bar.animate(.65);
+  // var bar = new ProgressBar.Line(lineprog4, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 3100,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
 
-  var bar = new ProgressBar.Line(lineprog5, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    delay: 3200,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%'
-    },
-    step: (state, bar) => {
-      bar.setText(Math.round(bar.value() * 100) + ' %');
-    }
-  });
+  // bar.animate(.65);
 
-  bar.animate(.85);
+  // var bar = new ProgressBar.Line(lineprog5, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 3200,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
+
+  // bar.animate(.85);
+
+  // var bar = new ProgressBar.Line(lineprog6, {
+  //   strokeWidth: 1.72,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   delay: 3200,
+  //   trailWidth: 1.72,
+  //   svgStyle: {
+  //     width: '100%',
+  //     height: '100%'
+  //   },
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
+
+  // bar.animate(.85);
 
   // Contact form
   $('.art-input').keyup(function() {
@@ -685,4 +730,14 @@ $(function() {
 
   })
 
+  // my tech
+  var swiper = new Swiper(".my-tech", {
+    slidesPerView: 8,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination-1",
+      clickable: true,
+    },
+  });
 });
