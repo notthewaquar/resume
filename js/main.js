@@ -137,7 +137,7 @@ $(function() {
     }
   });
 
-  bar.animate(0.9);
+  bar.animate(1);
 
   var bar = new ProgressBar.Circle(circleprog3, {
     strokeWidth: 7,
@@ -163,9 +163,6 @@ $(function() {
     for (let i = 0; i < progressBarEl; i++) {
       const pBarId = $(`.art-hard-skills > div:nth-child(${i+1}) .art-line-progress>div`).attr('id')
       const pBarPercent = $(`.art-hard-skills > div:nth-child(${i+1}) .art-line-progress>div`).attr('data-percent')
-      // console.log({pBarId,pBarPercent});
-      // return
-      // break
 
       var bar = new ProgressBar.Line(`#${pBarId}`, {
         strokeWidth: 1.72,
